@@ -18,14 +18,14 @@ public class AdministradorDePOISTest {
 	public void deberiaDevolverLaDistanciaEntreUnPuntoYUnPOI() {
 		
 		/* Inicializacion */
-		Punto miUbicacion = new Punto(100.0, 20.0);
-		POI cafeLosAngelitos = new POI("Cafe Los Angelitos", 10.0, 20.0);
+		Punto miUbicacion = new Punto(-34.6095668,-58.3981758);
+		POI cafeLosAngelitos = new POI("Cafe Los Angelitos", -34.6096435, -58.3983699);
 		
 		/* Operacion */
 		Double distanciaObtenida = administradorDePOIS.obtenerDistanciaEntreUnPuntoYUnPOI(miUbicacion, cafeLosAngelitos);
 		
 		/* Comprobacion */
-		Double distanciaEsperada = 10007.543398010286;
+		Double distanciaEsperada = 0.019704947060553896;
 		Assert.assertEquals(distanciaEsperada, distanciaObtenida);		
 	}
 }
