@@ -10,11 +10,11 @@ public class POISWebappIT {
 
     @Test
     public void test() throws Exception {
-        URL url = new URL("http://localhost:8080/pois/mascercano");
+        URL url = new URL("http://localhost:8080/pois/restorando/cafe/mascercano?long=-34.6095698&lat:-58.3989001");
         HttpURLConnection connection =  (HttpURLConnection) 
                                             url.openConnection();
         connection.connect();
-        assertEquals(404, connection.getResponseCode()); 
+        assertEquals(200, connection.getResponseCode());
     }
 
 }
