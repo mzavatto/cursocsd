@@ -13,6 +13,9 @@ public class POI {
 		this.longitud = longitud;
 	}
 
+	public POI() {
+	}
+
 	public Double getLatitud() {
 		return latitud;
 	}
@@ -20,4 +23,9 @@ public class POI {
 	public Double getLongitud() {
 		return longitud;
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
 }

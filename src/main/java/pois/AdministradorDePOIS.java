@@ -1,5 +1,7 @@
 package pois;
 
+import java.util.List;
+
 public class AdministradorDePOIS {
 
 	private static final int FACTOR_DE_CONVERSION = 1000;
@@ -27,5 +29,24 @@ public class AdministradorDePOIS {
         return distancia;
         
     }
+    
+    public POI obtenerPOIMasCercano(Punto miUbicacion, List<POI> listaPOIS) {
+    
+    	POI poiMasCercano = new POI();
+    	Double distanciaMasCercana = null;
+    	
+    	for (POI poi : listaPOIS) {
 
+    		Double distanciaActual = obtenerDistanciaEntreUnPuntoYUnPOI(miUbicacion, poi);
+    		
+    		if(distanciaMasCercana == null || distanciaActual < distanciaMasCercana) {
+    			
+    			distanciaMasCercana = distanciaActual;
+    			poiMasCercano = poi;
+    		}	
+    	}
+    	
+    	return poiMasCercano;
+    }
+    
 }
