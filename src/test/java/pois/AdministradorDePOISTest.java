@@ -25,7 +25,7 @@ public class AdministradorDePOISTest {
 		Double distanciaObtenida = administradorDePOIS.obtenerDistanciaEntreUnPuntoYUnPOI(miUbicacion, cafeLosAngelitos);
 		
 		/* Comprobacion */
-		Double distanciaEsperada = 0.019704947060553896;
+		Double distanciaEsperada = 19.704947060553895;
 		Assert.assertEquals(distanciaEsperada, distanciaObtenida);		
 	}
 }

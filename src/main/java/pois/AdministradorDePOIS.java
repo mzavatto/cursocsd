@@ -2,12 +2,13 @@ package pois;
 
 public class AdministradorDePOIS {
 
+	private static final int FACTOR_DE_CONVERSION = 1000;
 	private static final Double RADIO_TIERRA_METROS = 6371d;
 
 	public Double obtenerDistanciaEntreUnPuntoYUnPOI(Punto miUbicacion, POI poi) {
 		
-		Double distancia = calcularDistancia(miUbicacion.getLatitud(), miUbicacion.getLongitud(),
-				poi.getLatitud(), poi.getLongitud());
+		Double distancia = (calcularDistancia(miUbicacion.getLatitud(), miUbicacion.getLongitud(),
+				poi.getLatitud(), poi.getLongitud())) * FACTOR_DE_CONVERSION;
 		
 		return distancia;
 	}
