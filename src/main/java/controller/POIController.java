@@ -7,6 +7,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
+import pois.POI;
+
 @Path("/")
 public class POIController {
 	
@@ -22,9 +24,12 @@ public class POIController {
 					   .entity("Faltan los parametros de longitud y latitud").build();
 		}
 		
+		POI poiMasCercano = new POI("Cafe los Angelitos",-34.6096435,-58.3983699);
+		
+		
 		return Response
 				   .status(200)
-				   .entity("{'nombre':'Cafe los Angelitos', 'long':'-34.6096435', 'lat':'-58.3983699'}").build();
+				   .entity(poiMasCercano.getJsonDescripcion()).build();
 	}
 
 }

@@ -24,8 +24,14 @@ public class POI {
 		return longitud;
 	}
 
+<<<<<<< HEAD
 	public String getNombre() {
 		return nombre;
 	}
 
+=======
+	public String getJsonDescripcion() {
+		return "{\"nombre\":\""+this.nombre+"\",\"longitud\":\""+this.longitud.toString()+"\",\"latitud\":\""+this.latitud.toString()+"\"}";
+	}
+>>>>>>> 5c652a0efa1abd87c671eaf73546d9d72be4ed57
 }
