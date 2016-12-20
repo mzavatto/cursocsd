@@ -14,7 +14,7 @@ public class POISWebappIT {
         
 		Client client = Client.create();
         WebResource webResource = 
-                client.resource("http://localhost:8080/pois/restorando/cafe/mascercano?latitud=-58.3989001&longitud=-34.6095698");
+                client.resource("http://localhost:8080/pois/restorando/cafe/mascercano?latitud=-34.60956981&longitud=-58.398900");
         
     	ClientResponse response = webResource.accept("application/json")
                 .get(ClientResponse.class);
@@ -22,7 +22,7 @@ public class POISWebappIT {
 		String output = response.getEntity(String.class);
 		
 		assertEquals(200, response.getStatus());
-        assertEquals("{'nombre':'Cafe los Angelitos', 'long':'-34.6096435', 'lat':'-58.3983699'}", output);
+		assertEquals("{\"nombre\":\"Cafe los Angelitos\",\"longitud\":\"-58.3983699\",\"latitud\":\"-34.6096435\"}", output);
     }
 	
 	@Test
