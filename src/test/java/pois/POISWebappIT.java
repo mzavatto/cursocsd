@@ -14,7 +14,7 @@ public class POISWebappIT {
         HttpURLConnection connection =  (HttpURLConnection) 
                                             url.openConnection();
         connection.connect();
-        assertEquals(200, connection.getResponseCode()); 
+        assertEquals(404, connection.getResponseCode()); 
     }
 
 }
