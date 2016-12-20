@@ -10,7 +10,7 @@ public class POIController {
 	@GET
 	@Path("{servicioNombre}/{mapaNombre}/mascercano")
 	public String poisMasCercanos(@PathParam("servicioNombre") String servicioNombre,@PathParam("mapaNombre") String mapaNombre){
-		return "";
+		return "Cafe los angelitos";
 		
 	}
 
