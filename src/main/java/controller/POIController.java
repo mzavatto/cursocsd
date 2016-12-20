@@ -24,7 +24,7 @@ public class POIController {
 		
 		return Response
 				   .status(200)
-				   .entity("Cafe los angelitos").build();
+				   .entity("{'nombre':'Cafe los Angelitos', 'long':'-34.6096435', 'lat':'-58.3983699'}").build();
 	}
 
 }

@@ -11,7 +11,8 @@ public class POISWebappIT {
 
 	@Test
     public void deberiaDevolverElPOIMasCercano() throws Exception {
-        Client client = Client.create();
+        
+		Client client = Client.create();
         WebResource webResource = 
                 client.resource("http://localhost:8080/pois/restorando/cafe/mascercano?latitud=-58.3989001&longitud=-34.6095698");
         
@@ -21,8 +22,7 @@ public class POISWebappIT {
 		String output = response.getEntity(String.class);
 		
 		assertEquals(200, response.getStatus());
-        assertEquals("Cafe los angelitos", output);
-        
+        assertEquals("{'nombre':'Cafe los Angelitos', 'long':'-34.6096435', 'lat':'-58.3983699'}", output);
     }
 	
 	@Test
@@ -37,7 +37,7 @@ public class POISWebappIT {
     	ClientResponse response = webResource.accept("application/json")
                 .get(ClientResponse.class);
 
-    	/* Comprobacion */
+    	/* Operacion */
 		assertEquals("Faltan los parametros de longitud y latitud",response.getEntity(String.class));
 		assertEquals(404, response.getStatus());
         
