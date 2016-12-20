@@ -11,7 +11,7 @@ public class POISWebappIT {
 
     @SuppressWarnings("resource")
 	@Test
-    public void test() throws Exception {
+    public void deberiaDevolverElPOIMasCercano() throws Exception {
         URL url = new URL("http://localhost:8080/pois/restorando/cafe/mascercano?long=-34.6095698&lat:-58.3989001");
         HttpURLConnection connection =  (HttpURLConnection) 
                                             url.openConnection();
