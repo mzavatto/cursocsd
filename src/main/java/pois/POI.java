@@ -20,4 +20,8 @@ public class POI {
 	public Double getLongitud() {
 		return longitud;
 	}
+
+	public String getJsonDescripcion() {
+		return "{\"nombre\":\""+this.nombre+"\",\"longitud\":\""+this.longitud.toString()+"\",\"latitud\":\""+this.latitud.toString()+"\"}";
+	}
 }
