@@ -1,25 +1,27 @@
 package pois;
 import static org.junit.Assert.assertEquals;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Scanner;
-
 import org.junit.Test;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
 
 public class POISWebappIT {
 
-    @SuppressWarnings("resource")
 	@Test
     public void deberiaDevolverElPOIMasCercano() throws Exception {
-        URL url = new URL("http://localhost:8080/pois/restorando/cafe/mascercano?long=-34.6095698&lat:-58.3989001");
-        HttpURLConnection connection =  (HttpURLConnection) 
-                                            url.openConnection();
-        connection.connect();
-        Scanner scanner = new Scanner(connection.getInputStream()).useDelimiter("\\A");
-        String theString = scanner.hasNext() ? scanner.next() : "";
-        assertEquals(200, connection.getResponseCode());
-        assertEquals("Cafe los angelitos", theString);
+        Client client = Client.create();
+        WebResource webResource = 
+                client.resource("http://localhost:8080/pois/restorando/cafe/mascercano?long=-34.6095698&lat:-58.3989001");
+        
+    	ClientResponse response = webResource.accept("application/json")
+                .get(ClientResponse.class);
+    	
+		String output = response.getEntity(String.class);
+		
+		assertEquals(200, response.getStatus());
+        assertEquals("Cafe los angelitos", output);
         
     }
 
