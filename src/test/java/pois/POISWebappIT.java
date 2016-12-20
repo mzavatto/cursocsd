@@ -15,6 +15,7 @@ public class POISWebappIT {
                                             url.openConnection();
         connection.connect();
         assertEquals(200, connection.getResponseCode());
+        
     }
 
 }
