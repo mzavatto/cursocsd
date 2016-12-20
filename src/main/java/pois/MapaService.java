@@ -1,6 +1,7 @@
 package pois;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +21,9 @@ public class MapaService {
 	
 	public List<POI> getListaDePOIS(String nombreMapa) {
 		
-		return this.mapas.get(nombreMapa).getLista();
+		if(this.mapas.get(nombreMapa) != null){
+			return this.mapas.get(nombreMapa).getLista();	
+		}
+		return new LinkedList<POI>();	
 	}
-
 }
