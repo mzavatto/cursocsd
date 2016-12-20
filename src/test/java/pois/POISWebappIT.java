@@ -14,7 +14,7 @@ public class POISWebappIT {
         
 		Client client = Client.create();
         WebResource webResource = 
-                client.resource("http://localhost:8080/pois/restorando/cafe/mascercano?latitud=-34.60956981&longitud=-58.398900");
+                client.resource("http://localhost:8080/pois/restorando/cafeterias/mascercano?latitud=-34.60956981&longitud=-58.398900");
         
     	ClientResponse response = webResource.accept("application/json")
                 .get(ClientResponse.class);

@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -7,10 +9,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
+import pois.AdministradorDePOIS;
+import pois.MapaService;
 import pois.POI;
+import pois.Punto;
 
 @Path("/")
 public class POIController {
+	
+	
+	private MapaService mapaService = new MapaService();
 	
 	@GET
 	@Path("{servicioNombre}/{mapaNombre}/mascercano")
@@ -24,7 +32,11 @@ public class POIController {
 					   .entity("Faltan los parametros de longitud y latitud").build();
 		}
 		
-		POI poiMasCercano = new POI("Cafe los Angelitos",-34.6096435,-58.3983699);
+		List<POI> listaPoi = mapaService.getListaDePOIS(mapaNombre);
+		AdministradorDePOIS administradorPOIS = new AdministradorDePOIS();
+		
+		
+		POI poiMasCercano = administradorPOIS.obtenerPOIMasCercano(new Punto(latitud, longitud), listaPoi);
 		
 		
 		return Response
