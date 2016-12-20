@@ -2,9 +2,9 @@ package pois;
 
 public class POI {
 
-	private String nombre;
-	private Double latitud;
-	private Double longitud;
+	private String nombre ="";
+	private Double latitud = 0D;
+	private Double longitud = 0D;
 	
 	public POI(String nombre, double latitud, double longitud) {
 		
@@ -29,6 +29,9 @@ public class POI {
 	}
 
 	public String getJsonDescripcion() {
+		if(this.nombre.isEmpty()){
+			return "";
+		}
 		return "{\"nombre\":\""+this.nombre+"\",\"longitud\":\""+this.longitud.toString()+"\",\"latitud\":\""+this.latitud.toString()+"\"}";
 	}
 }

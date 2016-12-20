@@ -42,5 +42,23 @@ public class POISWebappIT {
 		assertEquals(404, response.getStatus());
         
     }
+	
+	@Test
+    public void deberiaDevolverUnaListaVacia() throws Exception {
+        
+		Client client = Client.create();
+        WebResource webResource = 
+                client.resource("http://localhost:8080/pois/restorando/templobudista/mascercano?latitud=-34.60956981&longitud=-58.398900");
+        
+    	ClientResponse response = webResource.accept("application/json")
+                .get(ClientResponse.class);
+    	
+		String output = response.getEntity(String.class);
+		
+		assertEquals(200, response.getStatus());
+		assertEquals("", output);
+    }
+	
+	
 
 }
