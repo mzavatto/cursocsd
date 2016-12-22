@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AdministradorDePOIS {
 
-	private static final int FACTOR_DE_CONVERSION = 1000;
+	private static final Integer FACTOR_DE_CONVERSION = 1000;
 	private static final Double RADIO_TIERRA_METROS = 6371d;
 
 	public Double obtenerDistanciaEntreUnPuntoYUnPOI(Punto miUbicacion, POI poi) {
