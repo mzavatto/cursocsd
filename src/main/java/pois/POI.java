@@ -30,7 +30,7 @@ public class POI {
 
 	public String getJsonDescripcion() {
 		if(this.nombre.isEmpty()){
-			return "";
+			return "{}";
 		}
 		return "{\"nombre\":\""+this.nombre+"\",\"longitud\":\""+this.longitud.toString()+"\",\"latitud\":\""+this.latitud.toString()+"\"}";
 	}

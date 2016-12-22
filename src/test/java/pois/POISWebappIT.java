@@ -56,7 +56,7 @@ public class POISWebappIT {
 		String output = response.getEntity(String.class);
 		
 		assertEquals(200, response.getStatus());
-		assertEquals("", output);
+		assertEquals("{}", output);
     }
 	
 	
