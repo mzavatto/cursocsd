@@ -7,5 +7,3 @@ notifications:
     recipients:
       - mzavatto9@gmail.com
       - lucas.campaner@grupoesfera.com.ar
-    on_success: [always|never|change] # default: change
-    on_failure: [always|never|change] # default: always
